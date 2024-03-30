@@ -14,10 +14,10 @@ source $SLURM_TMPDIR/env/bin/activate
 # conda create -n memory-gym python=3.11 --yes
 # conda activate memory-gym
 pip3 install --no-index --upgrade pip
-pip install torch_spline_conv-1.2.0-cp37-cp37m-linux_x86_64.whl
-pip install torch_scatter-2.0.5-cp37-cp37m-linux_x86_64.whl
-pip install torch_sparse-0.6.8-cp37-cp37m-linux_x86_64.whl
-pip install torch_cluster-1.5.8-cp37-cp37m-linux_x86_64.whl
+!pip install -q torch-scatter -f https://data.pyg.org/whl/torch-1.7.0+cu113.html
+!pip install -q torch-sparse -f https://data.pyg.org/whl/torch-1.7.0+cu113.html
+!pip install -q torch-spline -f https://data.pyg.org/whl/torch-1.7.0+cu113.html
+!pip install -q torch-cluster -f https://data.pyg.org/whl/torch-1.7.0+cu113.html
 pip3 install --no-index -r requirements.txt
 
 # python ./MemGym/MortarMayhem2.py -s $seed  --num_proc 48
